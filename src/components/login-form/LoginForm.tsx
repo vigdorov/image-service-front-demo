@@ -1,4 +1,5 @@
 import React, {SyntheticEvent, useState} from 'react';
+import './LoginForm.css';
 
 import authService from '../../services/AuthService';
 
@@ -21,11 +22,11 @@ const LoginForm: React.FC = () => {
     }
 
     return (
-        <form>
-            <label>User name:
-                <input value={userName} id="userName" onChange={handleInputChange} />
+        <form className='form'>
+            <label className='label'>User name:
+                <input className='input' value={userName} id="userName" onChange={handleInputChange} />
             </label>
-            <button type="submit" onClick={handleSend}>Send</button>
+            <button className='button__form' type="submit" onClick={handleSend}>Send</button>
         </form>
     );
 };

@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react';
+import './imageList.css';
 import {useSelector} from 'react-redux';
 
 import {imageListSelector} from '../../selectors';
@@ -10,10 +11,10 @@ const ImageList: React.FC = () => {
     }, []);
     const list = useSelector(imageListSelector);
     return (
-        <div>
+        <div className='gallery'>
             {list.map(image => (
-                <div key={image._id} style={{width: '100px', height: '100px', display: 'flex'}}>
-                    <img src={image.url} alt="hui" />
+                <div key={image._id} className='image__box'>
+                    <img className='image' src={image.url} alt="hui" />
                 </div>
             ))}
         </div>
